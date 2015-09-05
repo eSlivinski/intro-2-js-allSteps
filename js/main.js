@@ -12,76 +12,42 @@ var basemapOptions = {
 	osm : L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {})
 };
 
-var cities = {
-	albany	: [42.6525, -73.7572],
-	buffalo : [42.8857, -78.8787],
-	madison : {lat: 43.08298, lng: -89.3791}
-};
+var albany	= [42.6525, -73.7572],
+	buffalo = [42.8857, -78.8787],
+	madison = {lat: 43.08298, lng: -89.3791};
 
-function assignColor(value) {
-	return (value === 9999) ? "transparent" :
-		(value < .05) ? "#edf8fb" :
-		(value < .1) ? "#b3cde3" :
-		(value < .15) ? "#8c96c6" :
-		(value < .2) ? "#8856a7" : "#810f7c"
-}
+var cities = [albany, buffalo, madison];
 
-function makeCounties(countyData) {
-	counties = L.geoJson(countyData, {
-		style : function(feature) {
-			var countyid = feature.properties.STATE + feature.properties.COUNTY;
-			var coUnemployment = (!unemploymentData[countyid]) ? 9999 : unemploymentData[countyid];
-			var fillColor = assignColor(coUnemployment);
-			return { color : fillColor, fillOpacity : 0.6}
-		},
-		onEachFeature : function(feature, layer) {
-			layer.on('click', function(layer) {
-				console.log('clicked', feature.properties.NAME, feature)
-			});
-		}
-	});
-	counties.addTo(map);
-}
-function retrieveUnemploymentData() {
-	var countyObject = {};
-	d3.csv("/data/unemployment.csv")
-    	.row(function(d) { countyObject[d.countyid] = parseFloat(d.rate);})// return {id: d.countyid, value: +d.rate}; })
-		.get(function(error, rows) {
-			unemploymentData = countyObject;
-			retrieveCountyData();
+function makeBigFoots(){
+	for (x in bigfoots) {
+		var sighting = L.circle(bigfoots[x].latlng);
+		sighting['bigfootData'] = bigfoots[x];
+		sighting.setRadius(8);
+		sighting.setStyle({
+			'color':'red'
+		})
+		sighting.on('click',function(){
+			document.getElementById('bigfootDate').innerHTML = this.bigfootData.placemark;
+			document.getElementById('bigfootText').innerHTML = this.bigfootData.reportdesc;
 		});
 
+		sighting.addTo(map)
+	}
 }
-
-function retrieveCountyData(){
-	$.ajax({
-		url : '/data/counties.json',
-		success : function(countyData) {
-			makeCounties(countyData);
-
-		},
-		error : function(error) {
-			alert("Unable to Locate County geoJson")
-		}
-	});
-}
-
 
 function createMap() {
 	map = L.map('map', {
-		center 	:	cities['albany'],
-		layers  : 	[basemapOptions.osm],
-		zoom 	: 	13
+		center 	:	[39.7071, -97.3388],
+		layers  : 	[ basemapOptions.imagery ],
+		zoom 	: 	4
 	});
 
 	L.control.layers(basemapOptions).addTo(map);
-	retrieveUnemploymentData();
+	makeBigFoots();
 }
 
-function changeCity(selectedCity){
-	// console.log(selectedCity + " was selected from the dropdown menu.");
-	var currentCity = cities[selectedCity]; // Access the coordinates of the selected city in the cities object using the city's name (the selectedCity var) as a key
+function changeCity(selectedCityIndex){
+	var currentCity = cities[selectedCityIndex];
 	map.panTo(currentCity);
 }
-
 $(window).on('load', createMap);

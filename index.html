@@ -4,22 +4,24 @@
 	<title>Intro-2-JS</title>
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<!-- CSS Files -->
-	<link rel='stylesheet' href='/libraries/leaflet/leaflet.css'></link>
-	<link rel='stylesheet' href='/css/main.css'></link>
+	<link rel='stylesheet' href='./libraries/leaflet/leaflet.css'></link>
+	<link rel='stylesheet' href='./css/main.css'></link>
 </head>
 <body>
+	<h1>Bigfoot Sightings</h1>
 	<!-- Map Container -->
 	<div id='map'></div>
-	<select onchange='changeCity(this.value)'>
-		<option value='albany' selected='selected'> Albany, NY </option>
-		<option value='buffalo'> Buffalo, NY </option>
-		<option value='madison'> Madison, WI </option>
-	</select>
-
+	<!-- <select onchange='changeCity(this.value)'>
+		<option value='0' selected='selected'> Albany, NY </option>
+		<option value='1'> Buffalo, NY </option>
+		<option value='2'> Madison, WI </option>
+	</select> -->
+	<h3 id='bigfootDate'></h3>
+	<div id='bigfootText'></div>
 	<!-- Javascript Files -->
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-	<script src='/libraries/leaflet/leaflet.js'></script>
-	<script src='/js/main.js'></script>
+	<script src='./libraries/leaflet/leaflet.js'></script>
+	<script src='./data/bigfoots_formatted.js'></script>
+	<script src='./js/main.js'></script>
 </body>
 </html>
