@@ -1,6 +1,7 @@
 var map,
 	basemap,
 	counties,
+	bigfootPane,
 	unemploymentData;
 
 
@@ -19,6 +20,8 @@ var albany	= [42.6525, -73.7572],
 var cities = [albany, buffalo, madison];
 
 function makeBigFoots(){
+	var currentYr = document.getElementById('yrSeen').value;
+
 	var style = {
 		color: 'darkorange',
 		weight: 1,
@@ -26,32 +29,44 @@ function makeBigFoots(){
 		fillOpacity: 1
 	};
 
+	bigfootPane.clearLayers();
+
 	for (x in bigfoots) {
-		var coords   = L.latLng([bigfoots[x].lat, bigfoots[x].lng]),
-			sighting = L.circleMarker(coords).setRadius(2).setStyle(style).addTo(map);
+		if (bigfoots[x].yr==currentYr){
+			var coords   = L.latLng([bigfoots[x].lat, bigfoots[x].lng]),
+				sighting = L.circleMarker(coords).setRadius(2).setStyle(style).addTo(bigfootPane);
 
-		sighting['bigfootData'] = bigfoots[x];
+			sighting['bigfootData'] = bigfoots[x];
 
-		sighting.on('click',function(){
-			document.getElementById('bigfootDate').innerHTML = this.bigfootData.placemark;
-			document.getElementById('bigfootText').innerHTML = this.bigfootData.reportdesc;
-		});
+			sighting.on('click',function(){
+				document.getElementById('bigfootDate').innerHTML = this.bigfootData.placemark;
+				document.getElementById('bigfootText').innerHTML = this.bigfootData.reportdesc;
+			});
+		}
 	}
 }
 
 function createMap() {
+
+	bigfootPane = L.featureGroup();
+
 	map = L.map('map', {
 		center 	:	[39.7071, -97.3388],
-		layers  : 	basemapOptions['Satalite'],
+		layers  : 	[basemapOptions['Satalite'], bigfootPane],
 		zoom 	: 	4
 	});
 
 	L.control.layers(basemapOptions).addTo(map);
+
 	makeBigFoots();
 }
 
 function changeCity(selectedCityIndex){
 	var currentCity = cities[selectedCityIndex];
 	map.panTo(currentCity);
+}
+
+function foo(c) {
+
 }
 $(window).on('load', createMap);
