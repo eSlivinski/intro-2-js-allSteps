@@ -2,7 +2,7 @@ var map,
 	basemap,
 	counties,
 	bigfootPane,
-	unemploymentData;
+	slider;
 
 
 // More at http://leaflet-extras.github.io/leaflet-providers/preview/
@@ -19,8 +19,7 @@ var albany	= [42.6525, -73.7572],
 
 var cities = [albany, buffalo, madison];
 
-function makeBigFoots(){
-	var currentYr = document.getElementById('yrSeen').value;
+function makeBigFoots(sliderValue){
 
 	var style = {
 		color: 'darkorange',
@@ -32,7 +31,7 @@ function makeBigFoots(){
 	bigfootPane.clearLayers();
 
 	for (x in bigfoots) {
-		if (bigfoots[x].yr==currentYr){
+		if (bigfoots[x].yr==sliderValue){
 			var coords   = L.latLng([bigfoots[x].lat, bigfoots[x].lng]),
 				sighting = L.circleMarker(coords).setRadius(2).setStyle(style).addTo(bigfootPane);
 
@@ -46,6 +45,23 @@ function makeBigFoots(){
 	}
 }
 
+function makeSlider(){
+	var startingYr = 2015;
+
+	slider = new Slider('#yrSeen', {
+		value: startingYr,
+		min: 1900,
+		max: 2015,
+		step: 1
+	});
+
+	slider.on('slide', function(sliderValue){
+		makeBigFoots(sliderValue);
+	});
+
+	makeBigFoots(startingYr);
+}
+
 function createMap() {
 
 	bigfootPane = L.featureGroup();
@@ -57,8 +73,7 @@ function createMap() {
 	});
 
 	L.control.layers(basemapOptions).addTo(map);
-
-	makeBigFoots();
+	makeSlider();
 }
 
 function changeCity(selectedCityIndex){
@@ -66,7 +81,4 @@ function changeCity(selectedCityIndex){
 	map.panTo(currentCity);
 }
 
-function foo(c) {
-
-}
 $(window).on('load', createMap);

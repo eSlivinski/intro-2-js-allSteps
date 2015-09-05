@@ -3,8 +3,12 @@
 	height: 500px;
 }
 html {
-	background: black;
-	color: #ddd;
-	font-family: arial;
-	letter-spacing: 2px;
+	/*background: black;*/
+	/*color: #ddd;*/
+	/*font-family: arial;*/
+	/*letter-spacing: 2px;*/
+}
+#yrSeen {
+	margin-top: 15px;
+	width: 200px;
 }
