@@ -1,8 +1,5 @@
 var map,
-	basemap,
-	counties,
-	bigfootPane,
-	slider;
+	bigfoots;
 
 
 // More at http://leaflet-extras.github.io/leaflet-providers/preview/
@@ -13,72 +10,35 @@ var basemapOptions = {
 	'Open Street Map' : L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {})
 };
 
-var albany	= [42.6525, -73.7572],
-	buffalo = [42.8857, -78.8787],
-	madison = {lat: 43.08298, lng: -89.3791};
-
-var cities = [albany, buffalo, madison];
-
-function makeBigFoots(sliderValue){
+function makeBigFoots(){
 
 	var style = {
 		color: 'darkorange',
 		weight: 1,
 		fillColor: 'yellow',
-		fillOpacity: 1
+		fillOpacity: 1,
+    radius: 3
 	};
 
-	bigfootPane.clearLayers();
-
-	for (x in bigfoots) {
-		if (bigfoots[x].yr==sliderValue){
-			var coords   = L.latLng([bigfoots[x].lat, bigfoots[x].lng]),
-				sighting = L.circleMarker(coords).setRadius(2).setStyle(style).addTo(bigfootPane);
-
-			sighting['bigfootData'] = bigfoots[x];
-
-			sighting.on('click',function(){
-				document.getElementById('bigfootDate').innerHTML = this.bigfootData.placemark;
-				document.getElementById('bigfootText').innerHTML = this.bigfootData.reportdesc;
-			});
-		}
-	}
-}
-
-function makeSlider(){
-	var startingYr = 2015;
-
-	slider = new Slider('#yrSeen', {
-		value: startingYr,
-		min: 1900,
-		max: 2015,
-		step: 1
-	});
-
-	slider.on('slide', function(sliderValue){
-		makeBigFoots(sliderValue);
-	});
-
-	makeBigFoots(startingYr);
+  var bigfootLayer = L.geoJson(bigfoots, {
+    pointToLayer: function(feature, latlng) {
+      return new L.CircleMarker(latlng, style);
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.description);
+    }
+  }).addTo(map);
 }
 
 function createMap() {
-
-	bigfootPane = L.featureGroup();
-
 	map = L.map('map', {
 		center 	:	[39.7071, -97.3388],
-		layers  : 	[basemapOptions['Satalite'], bigfootPane],
-		zoom 	: 	4
+		layers  : [basemapOptions['Satalite']],
+		zoom 	  : 4
 	});
 
 	L.control.layers(basemapOptions).addTo(map);
-	makeSlider();
-}
-
-function changeCity(selectedCityIndex){
-	var currentCity = cities[selectedCityIndex];
-	map.panTo(currentCity);
+	makeBigFoots();
 }
 
 $(window).on('load', createMap);
