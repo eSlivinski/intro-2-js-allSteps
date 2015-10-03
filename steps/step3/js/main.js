@@ -4,26 +4,6 @@ var map,
 	bigfoots,                        // bigfoots geoJson
   bigfootLayer;
 
-// var yrInput = document.querySelector('.slider'),
-//     year = yrInput.valueAsNumber;
-//
-//   yrInput.onchange = function(){
-      // year = yrInput.valueAsNumber;
-      // map.removeLayer(bigfootLayer);
-//       makeBigFoots();
-//   };
-
-
-// // http://seiyria.com/bootstrap-slider/
-var yrInput = new Slider(".slider"),
-    year = yrInput.getValue();
-
-  yrInput.on('slide', function(value){
-      year = value;
-      map.removeLayer(bigfootLayer);
-      makeBigFoots();
-  });
-
 // More at http://leaflet-extras.github.io/leaflet-providers/preview/
 var basemapOptions = {
 	'Black and White' : L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {}),
@@ -33,26 +13,7 @@ var basemapOptions = {
 };
 
 function makeBigFoots(){
-
-	var style = {
-		color: 'darkorange',
-		weight: 1,
-		fillColor: 'yellow',
-		fillOpacity: 1,
-    radius: 3
-	};
-
-  bigfootLayer = L.geoJson(bigfoots, {
-    filter : function(feature, layer) {
-      return feature.properties.year === year;
-    },
-    pointToLayer: function(feature, latlng) {
-      return new L.CircleMarker(latlng, style);
-    },
-    onEachFeature: function(feature, layer) {
-      layer.bindPopup(feature.properties.description);
-    }
-  }).addTo(map);
+  bigfootLayer = L.geoJson(bigfoots).addTo(map);
 }
 
 function createMap() {
@@ -62,7 +23,7 @@ function createMap() {
 		zoom: 4
 	});
 
-	L.control.layers(basemapOptions).addTo(map);
+  L.control.layers(basemapOptions).addTo(map);
   makeBigFoots();
 }
 
