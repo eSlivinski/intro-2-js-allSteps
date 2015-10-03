@@ -32,9 +32,9 @@ function makeBigFoots(){
 
 function createMap() {
 	map = L.map('map', {
-		center 	:	[39.7071, -97.3388],
-		layers  : [basemapOptions['Satalite']],
-		zoom 	  : 4
+		center:	[39.7071, -97.3388],
+		layers: [basemapOptions['Satalite']],
+		zoom: 4
 	});
 
 	L.control.layers(basemapOptions).addTo(map);
