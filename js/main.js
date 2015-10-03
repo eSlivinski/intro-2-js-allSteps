@@ -1,6 +1,28 @@
+// Global Variables
+// Because they are defined outside of a function these varibles can be accessed in any function & in the command line
 var map,
-	bigfoots;
+	bigfoots,                        // bigfoots geoJson
+  bigfootLayer;
 
+// var yrInput = document.querySelector('.slider'),
+//     year = yrInput.valueAsNumber;
+//
+//   yrInput.onchange = function(){
+      // year = yrInput.valueAsNumber;
+      // map.removeLayer(bigfootLayer);
+//       makeBigFoots();
+//   };
+
+
+// // http://seiyria.com/bootstrap-slider/
+var yrInput = new Slider(".slider"),
+    year = yrInput.getValue();
+
+  yrInput.on('slide', function(value){
+      year = value;
+      map.removeLayer(bigfootLayer);
+      makeBigFoots();
+  });
 
 // More at http://leaflet-extras.github.io/leaflet-providers/preview/
 var basemapOptions = {
@@ -20,7 +42,10 @@ function makeBigFoots(){
     radius: 3
 	};
 
-  var bigfootLayer = L.geoJson(bigfoots, {
+  bigfootLayer = L.geoJson(bigfoots, {
+    filter : function(feature, layer) {
+      return feature.properties.year === year;
+    },
     pointToLayer: function(feature, latlng) {
       return new L.CircleMarker(latlng, style);
     },
@@ -38,7 +63,10 @@ function createMap() {
 	});
 
 	L.control.layers(basemapOptions).addTo(map);
-	makeBigFoots();
+  makeBigFoots();
 }
 
-$(window).on('load', createMap);
+// On load event is fired when the page is loaded
+window.onload = function(){
+  createMap();
+};

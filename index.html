@@ -5,6 +5,7 @@
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./libraries/bootstrap-slider/bootstrap-slider.min.css">
 	<link rel='stylesheet' href='./libraries/leaflet/leaflet.css'></link>
 	<link rel='stylesheet' href='./css/main.css'></link>
 </head>
@@ -12,9 +13,12 @@
 	<h1>Bigfoot Sightings</h1>
 	<!-- Map Container -->
 	<div id='map'></div>
+  <!-- <input class='slider' type='number' min='1869' max='2015' value='2015'/> -->
+  <input class='slider' type='number' data-slider-min='1869' data-slider-max='2015' data-slider-value='2015'/>
 
-	<script src='./libraries/leaflet/leaflet.js'></script>
+  <script src='./libraries/leaflet/leaflet.js'></script>
+  <script src='./libraries/bootstrap-slider/bootstrap-slider.min.js'></script>
 	<script src='./js/main.js'></script>
-	<script src='./data/bigfoots_2005_2015_clean.json'></script>
+	<script src='./data/bigfoots_allYears_clean.json'></script>
 </body>
 </html>
