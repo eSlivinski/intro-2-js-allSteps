@@ -1,0 +1,30 @@
+/*
+ * CSS Resources
+ *   - Listing of CSS Properties and Selectors (https://css-tricks.com/almanac/)
+ *	 - Selecting Hex Colors (http://www.colorpicker.com/)
+ *   - Web safe colors and other color resources (http://www.colorhexa.com/)
+*/
+
+
+/* id = "greeting" */
+#greeting{
+	font-style: italic;				/* Basic italic/bold text styling */
+}
+
+/* class = "stylish-button" */
+.stylish-button{
+	height: 100px;					 /* How many pixels tall the button is */
+	width: 20%;						 /* % of the page's horizontal space occupied by the button */
+	/*
+		Show box model
+	*/
+	padding: 10px;					 /* Space between the button's edge's and content */
+	margin: 30px;					 /* Space between the button's edge's and other content on the page */
+	border-width: 1px;				 /* The thickness of the border outlining the button's content */
+	border-color: orange;			 /* The color of the button's border */
+	border-radius: 3px; 			 /* How rounded the button's corner's are */
+	background-color: turquoise;	 /* The color of the inside of the button */
+	color: #FFF;					 /* Text color = white */
+	font-family: 'Impact'; 			 /* The font the button's content appears in */
+	font-size: 36px;				 /* The font size the button's content appears in */
+}
