@@ -14,9 +14,9 @@ var stringArray = ["text", "moreText", "stillMoreText"],
 */
  var wisconsinArray = ["Packers", "cheese", "cheese curds", "cheese heads"];
 
-	// console.log(wisconsinArray);
-	// console.log(wisconsinArray[1]);
-	// console.log(wisconsinArray[0]);
+	console.log(wisconsinArray);
+	//console.log(wisconsinArray[1]);
+	//console.log(wisconsinArray[0]);
 
 // wisconsinArray[4] = "Lizzi";
 // wisconsinArray[3] = "Bon Iver";

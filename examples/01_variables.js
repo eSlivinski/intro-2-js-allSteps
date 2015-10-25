@@ -6,7 +6,7 @@ var myVar;
 var anotherVar,
     yetAnotherVar;           // Chaining Variable Declarations
 
-    // console.log(myVar);   // >> undefined
+    console.log(myVar);   // >> undefined
 
 
 /*
