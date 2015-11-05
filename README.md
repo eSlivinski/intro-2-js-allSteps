@@ -1,11 +1,13 @@
 # intro-2-js
-<h3> Before the Workshop </h3>
-<ul>
-  <li> Download the <a href="#">Course Materials</a> </li>
-  <li> Download &amp; install an IDE on the laptop you plan to use during the workshop &mdash; We suggest <a href="https://atom.io/">Atom</a> or <a href="http://www.sublimetext.com/3">Sublime Text</a> &mdash;<em> Notepad will not work for the purposes of this workshop</em> </li>
-  <li> Download and Install <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> on the laptop you plan to use during the workshop</li>
-  <li>If you have any questions or concerns regarding the workshop or the workshop materials, please contact Lizzi Slivinski (lizzi.slivinski@nbtsolutions.com)</li>
-</ul>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/00_emptydocs/"> Step 0</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/01_step1/"> Step 1</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/02_step2/"> Step 2</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/03_step3/"> Step 3</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/04_step4/"> Step 4</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/05_step5/"> Step 5</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/06_step6/"> Step 6</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/07_step7/"> Step 7</a>
+### <a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/08_step8/"> Step 8</a>
 
 
 
