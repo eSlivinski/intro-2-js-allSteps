@@ -6,30 +6,50 @@
 
     <!-- CSS Files -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./libraries/bootstrap-slider/bootstrap-slider.min.css">
-	<link rel='stylesheet' href='./libraries/leaflet/leaflet.css'></link>
-	<link rel='stylesheet' href='./css/main.css'></link>
 </head>
 <body>
-
-    <h1>Bigfoot Sightings</h1>
-
-    <!-- <input id='yrSelector' type='number' value='2015'/> -->
-    <input id='yrSelector' type='number' data-slider-min='1869' data-slider-max='2015' data-slider-value='2015'>
-
-
-    <!-- Map Container -->
-    <div id='map'></div>
-
-    <!-- Javascript Files -->
-    <script src='./libraries/leaflet/leaflet.js'></script>
-    <script src='./libraries/bootstrap-slider/bootstrap-slider.min.js'></script>
-    <script src='./js/main.js'></script>
-
-
-    <!-- Data Files -->
-    <script src='./data/bigfoots_1869_2015.json'></script>
-    <!-- <script src='../data/bigfoots_2005_2015.json'></script> -->
-    <!-- <script src='./data/bigfoots_2015.json'></script> -->
+    <div class="container">
+        <h1>Intro-2-JS</h1>
+        <div class="row">
+            <div class="list-group">
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 0</h4>
+                <p class="list-group-item-text"> Empty Documents</p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 1</h4>
+                <p class="list-group-item-text">Creating a leaflet map</p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 2</h4>
+                <p class="list-group-item-text">Creating a layers controll object</p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 3</h4>
+                <p class="list-group-item-text">Adding a Geojson layer</p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 4</h4>
+                <p class="list-group-item-text">Styling GeoJSON Pts</p>
+              </a>
+              <a href="./steps/05_step5/index.html" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 5</h4>
+                <p class="list-group-item-text">Adding Popups</p>
+              </a>
+              <a href="./steps/06_step6/index.html" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 6</h4>
+                <p class="list-group-item-text">Filtering large datasets</p>
+              </a>
+              <a href="./steps/07_step7/index.html" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 7</h4>
+                <p class="list-group-item-text">Filtering datasets via user input</p>
+              </a>
+              <a href="./steps/08_step8/index.html" class="list-group-item">
+                <h4 class="list-group-item-heading">Step 8</h4>
+                <p class="list-group-item-text">Adding a slider bar </p>
+              </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

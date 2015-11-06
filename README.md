@@ -1,22 +1,18 @@
 # intro-2-js
-<h3> Before the Workshop </h3>
-<ul>
-  <li> Download the <a href="#">Course Materials</a> </li>
-  <li> Download &amp; install an IDE on the laptop you plan to use during the workshop &mdash; We suggest <a href="https://atom.io/">Atom</a> or <a href="http://www.sublimetext.com/3">Sublime Text</a> &mdash;<em> Notepad will not work for the purposes of this workshop</em> </li>
-  <li> Download and Install <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> on the laptop you plan to use during the workshop</li>
-  <li>If you have any questions or concerns regarding the workshop or the workshop materials, please contact Lizzi Slivinski (lizzi.slivinski@nbtsolutions.com)</li>
-</ul>
+This repository contains all the code necessary to complete the <a href="https://github.com/NBTSolutions/intro-2-js">Intro-2-JS</a> tutorial.
 
+The tutorial uses a combination of custom and prewritten code (found in the snippets.js file) to create a leaflet map with a geoJSON layer and temporal slider.  All of the code in the snippets file comes from the leaflet.js API (http://leafletjs.com/reference.html) and the bootstrap-slider documentation (http://seiyria.com/bootstrap-slider/).  All of the data was provided by the Bigfoot Field Researchers Organization (BFRO)*#Believe*. If you have any questions regarding the process for completing the tutorial, javascript, web-mapping, or bigfoots, please feel free to contact @eslivinski.
 
+Happy Coding!
 
-<h3> Additional Resources</h3>
-<ul>
-	<li><a href="http://leafletjs.com/"> Leaflet </a> &mdash;<small> Javascript library for creating maps </small></li>
-	<li><a href="http://shpescape.com/"> Shape Escape </a>&mdash; <small> Online tool for converting shapefiles to geoJSON </small></li>
-	<li><a href="http://leaflet-extras.github.io/leaflet-providers/preview/"> Leaflet Providers </a>&mdash;<small> Source for tiled basemap layers</small></li>
-	<li><a href="https://jquery.com/"> Jquery </a>&mdash;<small> Javascript library for interacting with DOM elements </small></li>
-	<li><a href="http://stackoverflow.com/"> Stack Overflow </a>&mdash;<small> Question and answer forum for javascript & pretty much everything else </small></li>
-	<li><a href="http://getbootstrap.com/"> Twitter Bootstrap </a>&mdash;<small> HTML, CSS, and JS library for creating mobile-ready web pages </small></li>
-	<li><a href="http://colorbrewer2.org/"> Color Brewer </a>&mdash;<small> Color advice for chloropleth maps </small></li>
-	<li><a href="https://css-tricks.com/"> CSS Tricks </a>&mdash;<small> Helpful CSS advice and explanations </small></li>
-</ul>
+<HR>
+# Steps
+#### - Step #0 &mdash; *Empty Documents* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/00_emptydocs/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/00_emptydocs"> Code </a>)
+#### - Step #1 &mdash; *Creating a leaflet map* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/01_step1/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/01_step1"> Code </a>)
+#### - Step #2 &mdash; *Creating a layers control object* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/02_step2/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/02_step2"> Code </a>)
+#### - Step #3 &mdash; *Adding a GeoJSON layer* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/03_step3/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/03_step3"> Code </a>)
+#### - Step #4 &mdash; *Styling GeoJSON Pts* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/04_step4/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/04_step4"> Code </a>)
+#### - Step #5 &mdash; *Adding Popups* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/05_step5/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/05_step5"> Code </a>)
+#### - Step #6 &mdash; *Filtering large datasets* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/06_step6/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/06_step6"> Code </a>)
+#### - Step #7 &mdash; *Filtering datasets via user input* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/07_step7/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/07_step7"> Code </a>)
+#### - Step #8 &mdash; *Adding a slider bar* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/08_step8/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/08_step8"> Code </a>)
