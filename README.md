@@ -1,9 +1,11 @@
 # intro-2-js
 This repository contains all the code necessary to complete the <a href="https://github.com/NBTSolutions/intro-2-js">Intro-2-JS</a> tutorial.
 
-The tutorial uses a combination of custom and prewritten code (found in the snippets.js file) to create a leaflet map with a geoJSON layer and temporal slider.  All of the code in the snippets file comes from the leaflet.js API (http://leafletjs.com/reference.html) and the bootstrap-slider documentation (http://seiyria.com/bootstrap-slider/).  All of the data was provided by the Bigfoot Field Researchers Organization (BFRO)*#Believe*. If you have any questions regarding the process for completing the tutorial, javascript, web-mapping, or bigfoots, please feel free to contact @eslivinski.
+The tutorial uses a combination of custom and prewritten code (found in the snippets.js file) to create a leaflet map with a geoJSON layer and temporal slider.  
 
-Happy Coding!
+All of the code in the snippets file comes from the leaflet.js API (http://leafletjs.com/reference.html) and the bootstrap-slider documentation (http://seiyria.com/bootstrap-slider/).  
+
+All of the data was provided by the Bigfoot Field Researchers Organization (BFRO)*#Believe*.
 
 <HR>
 # Steps
