@@ -1,11 +1,5 @@
 # intro-2-js
-<h3> Before the Workshop </h3>
-<ul>
-  <li> Download the <a href="#">Course Materials</a> </li>
-  <li> Download &amp; install an IDE on the laptop you plan to use during the workshop &mdash; We suggest <a href="https://atom.io/">Atom</a> or <a href="http://www.sublimetext.com/3">Sublime Text</a> &mdash;<em> Notepad will not work for the purposes of this workshop</em> </li>
-  <li> Download and Install <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> on the laptop you plan to use during the workshop</li>
-  <li>If you have any questions or concerns regarding the workshop or the workshop materials, please contact Lizzi Slivinski (lizzi.slivinski@nbtsolutions.com)</li>
-</ul>
+
 
 
 
