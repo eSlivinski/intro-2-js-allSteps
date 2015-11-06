@@ -7,7 +7,7 @@ All of the code in the snippets file comes from the leaflet.js API (http://leafl
 
 All of the data was provided by the Bigfoot Field Researchers Organization (BFRO)*#Believe*.
 
-<HR>
+
 # Steps
 #### - Step #0 &mdash; *Empty Documents* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/00_emptydocs/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/00_emptydocs"> Code </a>)
 #### - Step #1 &mdash; *Creating a leaflet map* (<a href="http://eslivinski.github.io/intro-2-js-allSteps/steps/01_step1/"> Map</a>, <a href="https://github.com/eSlivinski/intro-2-js-allSteps/tree/master/mapping/01_step1"> Code </a>)
